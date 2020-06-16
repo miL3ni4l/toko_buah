@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Jun 2020 pada 14.16
+-- Waktu pembuatan: 16 Jun 2020 pada 15.07
 -- Versi server: 10.3.16-MariaDB
 -- Versi PHP: 7.3.7
 
@@ -32,16 +32,16 @@ CREATE TABLE `dokter` (
   `id_dokter` int(11) NOT NULL,
   `nama` varchar(50) DEFAULT NULL,
   `alamat` varchar(100) DEFAULT NULL,
-  `spesialisn` varchar(100) DEFAULT NULL
+  `spesialis` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `dokter`
 --
 
-INSERT INTO `dokter` (`id_dokter`, `nama`, `alamat`, `spesialisn`) VALUES
-(1, 'Budi', 'Yogyakarta', 'BPJS'),
-(2, 'Argo', 'Yogyakarta', 'BPJS\r\n');
+INSERT INTO `dokter` (`id_dokter`, `nama`, `alamat`, `spesialis`) VALUES
+(1, 'Budi', 'Yogyakarta', 'Gigi\r\n'),
+(2, 'Argo', 'Yogyakarta', 'Bedah');
 
 -- --------------------------------------------------------
 
@@ -61,8 +61,8 @@ CREATE TABLE `pasien` (
 --
 
 INSERT INTO `pasien` (`no_rm`, `nama`, `alamat`, `tipe_pasien`) VALUES
-(1, 'Budi', 'Yogyakarta', 'BPJS'),
-(2, 'Argo', 'Yogyakarta', 'BPJS');
+(2, 'Argo', 'Yogyakarta', 'BPJS'),
+(9, 'Angga kaharap', 'Palangkaraya', 'Pasien Baru');
 
 -- --------------------------------------------------------
 
@@ -156,7 +156,7 @@ ALTER TABLE `dokter`
 -- AUTO_INCREMENT untuk tabel `pasien`
 --
 ALTER TABLE `pasien`
-  MODIFY `no_rm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `no_rm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
