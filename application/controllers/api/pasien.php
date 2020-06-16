@@ -39,7 +39,7 @@ class Pasien extends REST_Controller
                     'message' => 'Pasien Not Found !!!'
                 ], REST_Controller::HTTP_NOT_FOUND);
         }
-        $this->template->load('template', 'pendaftaran/list');
+        // $this->template->load('template', 'pendaftaran/list');
 
     }
     

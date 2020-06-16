@@ -38,7 +38,7 @@ class Dokter extends REST_Controller
                     'message' => 'dokter Not Found !!!'
                 ], REST_Controller::HTTP_NOT_FOUND);
         }
-        $this->template->load('template', 'pendaftaran/list');
+        // $this->template->load('template', 'pendaftaran/list');
         
     }
     

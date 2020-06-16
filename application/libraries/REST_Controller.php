@@ -1,5 +1,9 @@
 <?php
+namespace Restserver\Libraries;
 
+use Exception;
+use stdClass;
+use Restserver\Libraries\Format;
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -638,11 +642,11 @@ abstract class REST_Controller extends \CI_Controller {
         $object_called = preg_replace('/^(.*)\.(?:'.implode('|', array_keys($this->_supported_formats)).')$/', '$1', $object_called);
 
         $controller_method = $object_called.'_'.$this->request->method;
-	    // Does this method exist? If not, try executing an index method
-	    if (!method_exists($this, $controller_method)) {
-		    $controller_method = "index_" . $this->request->method;
-		    array_unshift($arguments, $object_called);
-	    }
+        // Does this method exist? If not, try executing an index method
+        if (!method_exists($this, $controller_method)) {
+            $controller_method = "index_" . $this->request->method;
+            array_unshift($arguments, $object_called);
+        }
 
         // Do we want to log this method (if allowed by config)?
         $log_method = ! (isset($this->methods[$controller_method]['log']) && $this->methods[$controller_method]['log'] === FALSE);
@@ -745,8 +749,8 @@ abstract class REST_Controller extends \CI_Controller {
             }
 
             // If the method doesn't exist, then the error will be caught and an error response shown
-	        $_error = &load_class('Exceptions', 'core');
-	        $_error->show_exception($ex);
+            $_error = &load_class('Exceptions', 'core');
+            $_error->show_exception($ex);
         }
     }
 
@@ -760,7 +764,7 @@ abstract class REST_Controller extends \CI_Controller {
      */
     public function response($data = NULL, $http_code = NULL)
     {
-		ob_start();
+        ob_start();
         // If the HTTP status is not NULL, then cast as an integer
         if ($http_code !== NULL)
         {
@@ -2190,7 +2194,7 @@ abstract class REST_Controller extends \CI_Controller {
 
         if (!empty($accessRow) && !empty($accessRow['all_access']))
         {
-        	return TRUE;
+            return TRUE;
         }
 
         // Fetch controller based on path and controller name
