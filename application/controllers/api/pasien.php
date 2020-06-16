@@ -51,7 +51,7 @@ class Pasien extends REST_Controller
         if ($id === NULL) {
             $this->response([
                     'status'    => FALSE,
-                    'message'   => 'Tidak Ada Yang Dihapus'
+                    'message'   => 'Nothing Deleted !!!'
                 ], REST_Controller::HTTP_BAD_REQUEST);   
         } else {
             if ($this->pasien->deletePasien($id) > 0) 
@@ -94,7 +94,7 @@ class Pasien extends REST_Controller
         $this->db->where('no_rm', $no_rm);
         $update = $this->db->update('pasien', $data);
         if ($update) {
-            $this->response($data, 200);
+            $this->response(array('status' => 'Pasien updated successfuly'));
         } else {
             $this->response(array('status' => 'fail', 502));
         }
