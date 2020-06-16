@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Dokter extends REST_Controller
 {
-    //directedAnggaDeka
+    //directedAnggaDeKaharap
     public function __construct()
     {
         parent::__construct();
